@@ -1,20 +1,145 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { useState, useEffect } from 'react';
 
-export default function App() {
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import { DefaultTheme, DarkTheme, NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { EventRegister } from 'react-native-event-listeners';
+import theme from './theme/theme';
+import themeContext from './theme/themeContext';
+
+import ListScreen from './pages/ListScreen';
+import MapScreen from './pages/MapScreen';
+import SavedScreen from './pages/SavedScreen';
+import SettingsScreen from './pages/SettingsScreen';
+
+const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+// The bottom tab navigator
+function MapStack({ alerts }) {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Stack.Navigator initialRouteName="Map" screenOptions={{ headerShown: false }}>
+      <Stack.Screen
+        name="Map"
+        component={MapScreen}
+        initialParams={{ alerts }}
+      />
+      <Stack.Screen name="Saved" component={SavedScreen} />
+    </Stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// The bottom tab navigator
+function ListStack({ alerts }) {
+  return (
+    <Stack.Navigator initialRouteName="List" screenOptions={{ headerShown: false }}>
+      <Stack.Screen
+        name="List"
+        component={ListScreen}
+        initialParams={{ alerts }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+// The bottom tab navigator
+function SettingsStack() {
+  return (
+    <Stack.Navigator initialRouteName="Settings" screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Settings" component={SettingsScreen} />
+    </Stack.Navigator>
+  );
+}
+
+// The main app component
+function App() {
+  const [loading, setLoading] = useState(true); // Set the initial state to 'true'
+  const [alerts, setAlerts] = useState([]);
+
+  const getAlerts = async () => {
+    try {
+      const response = await fetch('./data/alerts.json');
+      const json = await response.json();
+      setAlerts(json.alerts);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getAlerts();
+  }, []);
+
+  // Dark Mode
+  const [darkMode, setDarkMode] = useState(false)
+
+  useEffect(() => {
+    const listener = EventRegister.addEventListener('ChangeTheme', (data) => {
+      setDarkMode(data)
+
+    })
+    return () => {
+      EventRegister.removeAllListeners(listener)
+    }
+  }, [darkMode])
+
+  return (
+    <themeContext.Provider value={darkMode === true ? theme.dark : theme.light}>
+      <NavigationContainer theme={darkMode === true ? DarkTheme: DefaultTheme}>
+        <Tab.Navigator
+          initialRouteName="Feed"
+          screenOptions={({ route }) => ({
+            headerStyle: { backgroundColor: '#0000e6' },
+            headerTintColor: '#fff',
+            headerTitleStyle: { fontWeight: 'bold' },
+            tabBarActiveTintColor: 'tomato',
+            tabBarInactiveTintColor: 'gray',
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
+              if (route.name === 'MapStack') {
+                iconName = focused ? 'map-marker' : 'map-marker-outline';
+              } else if (route.name === 'ListStack') {
+                iconName = focused ? 'format-list-bulleted' : 'format-list-bulleted';
+              } else if (route.name === 'SettingsStack') {
+                iconName = focused ? 'cog' : 'cog-outline';
+              }
+              return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
+            },
+          })}
+        >
+          <Tab.Screen
+            name="MapStack"
+            component={() => <MapStack alerts={alerts} />}
+            options={{
+              tabBarLabel: 'Map',
+              title: 'Map',
+            }}
+          />
+          <Tab.Screen
+            name="ListStack"
+            component={() => <ListStack alerts={alerts} />}
+            options={{
+              tabBarLabel: 'List',
+              title: 'Meldingen',
+            }}
+          />
+          <Tab.Screen
+            name="SettingsStack"
+            component={SettingsStack}
+            options={{
+              tabBarLabel: 'Settings',
+              title: 'Settings',
+            }}
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </themeContext.Provider>
+  );
+}
+
+export default App;
