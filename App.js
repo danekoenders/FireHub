@@ -15,6 +15,8 @@ import MapScreen from './pages/MapScreen';
 import SavedScreen from './pages/SavedScreen';
 import SettingsScreen from './pages/SettingsScreen';
 
+import alertsData from './data/alerts.json';
+
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -56,23 +58,12 @@ function SettingsStack() {
 
 // The main app component
 function App() {
-  const [loading, setLoading] = useState(true); // Set the initial state to 'true'
+  const [loading, setLoading] = useState(true);
   const [alerts, setAlerts] = useState([]);
 
-  const getAlerts = async () => {
-    try {
-      const response = await fetch('./data/alerts.json');
-      const json = await response.json();
-      setAlerts(json.alerts);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    getAlerts();
+    setAlerts(alertsData.alerts);
+    setLoading(false);
   }, []);
 
   // Dark Mode
@@ -88,9 +79,12 @@ function App() {
     }
   }, [darkMode])
 
+  const MapStackComponent = () => <MapStack alerts={alerts} />;
+  const ListStackComponent = () => <ListStack alerts={alerts} />;
+
   return (
     <themeContext.Provider value={darkMode === true ? theme.dark : theme.light}>
-      <NavigationContainer theme={darkMode === true ? DarkTheme: DefaultTheme}>
+      <NavigationContainer theme={darkMode === true ? DarkTheme : DefaultTheme}>
         <Tab.Navigator
           initialRouteName="Feed"
           screenOptions={({ route }) => ({
@@ -114,7 +108,7 @@ function App() {
         >
           <Tab.Screen
             name="MapStack"
-            component={() => <MapStack alerts={alerts} />}
+            component={MapStackComponent}
             options={{
               tabBarLabel: 'Map',
               title: 'Map',
@@ -122,7 +116,7 @@ function App() {
           />
           <Tab.Screen
             name="ListStack"
-            component={() => <ListStack alerts={alerts} />}
+            component={ListStackComponent}
             options={{
               tabBarLabel: 'List',
               title: 'Meldingen',

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { View, Text, SafeAreaView, StyleSheet } from 'react-native';
-import {AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import themeContext from '../theme/themeContext';
 
 const SavedScreen = () => {
