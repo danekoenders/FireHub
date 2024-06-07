@@ -21,28 +21,26 @@ const ListScreen = ({ route, navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ flex: 1, padding: 16 }}>
-        <ScrollView style={styles.scrollView}>
-          {alerts.map((alert, index) => (
-            <View key={index} style={styles.listView}>
-              <TouchableOpacity
-                style={{ flexDirection: 'row', justifyContent: 'space-between' }}
-                onPress={() => handleAlertItemClick(alert)}
-              >
-                <Text style={[styles.textItem, { color: theme.color }]}>{alert.title}</Text>
-              </TouchableOpacity>
-            </View>
-          ))}
-        </ScrollView>
-      </View>
+      <ScrollView style={styles.scrollView}>
+        {alerts.map((alert, index) => (
+          <View key={index} style={styles.listView}>
+            <TouchableOpacity
+              style={{ flexDirection: 'row', justifyContent: 'space-between' }}
+              onPress={() => handleAlertItemClick(alert)}
+            >
+              <Text style={[styles.textItem, { color: theme.color }]}>{alert.title}</Text>
+            </TouchableOpacity>
+          </View>
+        ))}
+      </ScrollView>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   scrollView: {
-    marginTop: 60,
     width: '100%',
+    padding: 16,
   },
 
   listView: {
