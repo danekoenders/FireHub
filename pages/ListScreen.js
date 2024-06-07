@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   itemHeartButton: {
     alignItems: 'center',
   },
-  
+
   heartButton: {
     position: 'absolute',
     top: 16,
