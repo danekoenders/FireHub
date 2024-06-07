@@ -12,7 +12,6 @@ import themeContext from './theme/themeContext';
 
 import ListScreen from './pages/ListScreen';
 import MapScreen from './pages/MapScreen';
-import SavedScreen from './pages/SavedScreen';
 import SettingsScreen from './pages/SettingsScreen';
 
 import alertsData from './data/alerts.json';
@@ -29,7 +28,6 @@ function MapStack({ alerts }) {
         component={MapScreen}
         initialParams={{ alerts }}
       />
-      <Stack.Screen name="Saved" component={SavedScreen} />
     </Stack.Navigator>
   );
 }

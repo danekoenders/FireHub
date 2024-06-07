@@ -89,10 +89,6 @@ const MapScreen = ({ route, navigation }) => {
               />
             ))}
           </MapView>
-
-          <TouchableOpacity style={[styles.heartButton, { backgroundColor: theme.color }]} onPress={() => navigation.navigate('Saved')}>
-            <Icon name="heart" size={30} color="red" />
-          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
