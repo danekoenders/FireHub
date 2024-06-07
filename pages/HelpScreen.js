@@ -11,7 +11,6 @@ const HelpScreen = ({ route, navigation }) => {
             <ScrollView style={styles.scrollView}>
                 <View style={{ flex: 1, padding: 16 }}>
                 </View>
-
             </ScrollView>
         </SafeAreaView>
     );

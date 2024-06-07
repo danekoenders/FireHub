@@ -5,6 +5,7 @@ import { TouchableOpacity, StyleSheet, View, Text, SafeAreaView } from 'react-na
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import * as Location from 'expo-location';
 import themeContext from '../theme/themeContext';
+import TopNav from '../components/navigation/TopNav';
 
 const MapScreen = ({ route, navigation }) => {
   const [alerts, setAlerts] = useState([]);
@@ -58,6 +59,7 @@ const MapScreen = ({ route, navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <TopNav />
       <View style={styles.view}>
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <MapView

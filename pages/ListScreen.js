@@ -4,6 +4,7 @@ import { TouchableOpacity, StyleSheet, View, Text, SafeAreaView, ScrollView } fr
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import themeContext from '../theme/themeContext';
+import TopNav from '../components/navigation/TopNav';
 
 const ListScreen = ({ route, navigation }) => {
   const [alerts, setAlerts] = useState([]);
@@ -21,6 +22,7 @@ const ListScreen = ({ route, navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <TopNav />
       <ScrollView style={styles.scrollView}>
         {alerts.map((alert, index) => (
           <View key={index} style={styles.listView}>
