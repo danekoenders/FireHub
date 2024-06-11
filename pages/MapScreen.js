@@ -57,6 +57,8 @@ const MapScreen = ({ route, navigation }) => {
   // Create a reference to the map
   const mapRef = React.useRef(null);
 
+  console.log("hi")
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <TopNav />
