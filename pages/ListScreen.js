@@ -4,6 +4,7 @@ import { TouchableOpacity, StyleSheet, View, Text, SafeAreaView, ScrollView } fr
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import themeContext from '../theme/themeContext';
+import TopNav from '../components/navigation/TopNav';
 
 const ListScreen = ({ route, navigation }) => {
   const [alerts, setAlerts] = useState([]);
@@ -21,28 +22,27 @@ const ListScreen = ({ route, navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ flex: 1, padding: 16 }}>
-        <ScrollView style={styles.scrollView}>
-          {alerts.map((alert, index) => (
-            <View key={index} style={styles.listView}>
-              <TouchableOpacity
-                style={{ flexDirection: 'row', justifyContent: 'space-between' }}
-                onPress={() => handleAlertItemClick(alert)}
-              >
-                <Text style={[styles.textItem, { color: theme.color }]}>{alert.title}</Text>
-              </TouchableOpacity>
-            </View>
-          ))}
-        </ScrollView>
-      </View>
+      <TopNav />
+      <ScrollView style={styles.scrollView}>
+        {alerts.map((alert, index) => (
+          <View key={index} style={styles.listView}>
+            <TouchableOpacity
+              style={{ flexDirection: 'row', justifyContent: 'space-between' }}
+              onPress={() => handleAlertItemClick(alert)}
+            >
+              <Text style={[styles.textItem, { color: theme.color }]}>{alert.title}</Text>
+            </TouchableOpacity>
+          </View>
+        ))}
+      </ScrollView>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   scrollView: {
-    marginTop: 60,
     width: '100%',
+    padding: 16,
   },
 
   listView: {
