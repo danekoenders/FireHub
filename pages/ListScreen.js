@@ -1,20 +1,10 @@
 import * as React from 'react';
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { TouchableOpacity, StyleSheet, View, Text, SafeAreaView, ScrollView } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import themeContext from '../theme/themeContext';
-import TopNav from '../components/navigation/TopNav';
 
-const ListScreen = ({ route, navigation }) => {
-  const [alerts, setAlerts] = useState([]);
+const ListScreen = ({ alerts, navigation }) => {
   const theme = useContext(themeContext);
-
-  useEffect(() => {
-    if (route.params?.alerts) {
-      setAlerts(route.params.alerts);
-    }
-  }, []);
 
   const handleAlertItemClick = (alert) => {
     navigation.navigate('Map', { selectedAlert: alert });
@@ -22,7 +12,6 @@ const ListScreen = ({ route, navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <TopNav />
       <ScrollView style={styles.scrollView}>
         {alerts.map((alert, index) => (
           <View key={index} style={styles.listView}>
@@ -44,12 +33,10 @@ const styles = StyleSheet.create({
     width: '100%',
     padding: 16,
   },
-
   listView: {
     flexDirection: 'column',
     marginBottom: 10,
   },
-
   textItem: {
     fontSize: 20,
   },
