@@ -10,6 +10,8 @@ import ListScreen from '../../pages/ListScreen';
 import HelpScreen from '../../pages/HelpScreen';
 import EmergencyCall from '../../pages/EmergencyCall';
 import SettingsScreen from '../../pages/SettingsScreen';
+import AppAppearance from '../../pages/AppAppearance';
+import LanguageSettings from '../../pages/LanguageSettings';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -62,6 +64,8 @@ const MainNavigator = ({ alerts }) => {
         </Stack.Screen>
         <Stack.Screen name="EmergencyCall" component={EmergencyCall} options={{ title: 'Emergency Call' }} />
         <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
+        <Stack.Screen name="AppAppearance" component={AppAppearance} options={{ title: 'AppAppearance' }} />
+        <Stack.Screen name="LanguageSettings" component={LanguageSettings} options={{ title: 'LanguageSettings' }} />
       </Stack.Navigator>
     </SafeAreaView>
   );
