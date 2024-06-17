@@ -49,8 +49,10 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { useNavigation } from '@react-navigation/native';
 
 const SettingsScreen = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
 
@@ -77,7 +79,7 @@ const SettingsScreen = () => {
           <Text style={styles.settingSubtext}>Berichten en notificatie radius aanpassen</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.settingItem}>
+        <TouchableOpacity style={styles.settingItem} onPress={() => navigation.navigate('AppAppearance')}>
           <View style={styles.settingIcon}>
             <Icon name="edit" size={24} color="#000" />
           </View>
@@ -93,12 +95,12 @@ const SettingsScreen = () => {
           <Text style={styles.settingSubtext}>Help center, E-mail</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.settingItem}>
+        <TouchableOpacity style={styles.settingItem} onPress={() => navigation.navigate('LanguageSettings')}>
           <View style={styles.settingIcon}>
             <Icon name="language" size={24} color="#000" />
           </View>
-          <Text style={styles.settingText}>Taal</Text>
-          <Text style={styles.settingSubtext}>Verander de taal van de app</Text>
+            <Text style={styles.settingText}>Taal</Text>
+        <Text style={styles.settingSubtext}>Verander de taal van de app</Text>
         </TouchableOpacity>
       </View>
     </View>
