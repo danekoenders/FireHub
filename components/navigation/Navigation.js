@@ -3,6 +3,7 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useTranslation } from 'react-i18next';
 import TopNav from './TopNav';
 
 import MapScreen from '../../pages/MapScreen';
@@ -17,6 +18,8 @@ const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 const TabNavigator = ({ alerts }) => {
+  const { t } = useTranslation();
+
   return (
     <Tab.Navigator
       initialRouteName="Map"
@@ -39,18 +42,20 @@ const TabNavigator = ({ alerts }) => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Tab.Screen name="Map">
+      <Tab.Screen name="Map" options={{ tabBarLabel: t('navigation.map') }}>
         {props => <MapScreen {...props} alerts={alerts} />}
       </Tab.Screen>
-      <Tab.Screen name="List">
+      <Tab.Screen name="List" options={{ tabBarLabel: t('navigation.list') }}>
         {props => <ListScreen {...props} alerts={alerts} />}
       </Tab.Screen>
-      <Tab.Screen name="Help" component={HelpScreen} options={{ tabBarLabel: 'Help' }} />
+      <Tab.Screen name="Help" component={HelpScreen} options={{ tabBarLabel: t('navigation.help') }} />
     </Tab.Navigator>
   );
 };
 
 const MainNavigator = ({ alerts }) => {
+  const { t } = useTranslation();
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <Stack.Navigator>
@@ -62,10 +67,10 @@ const MainNavigator = ({ alerts }) => {
             </>
           )}
         </Stack.Screen>
-        <Stack.Screen name="EmergencyCall" component={EmergencyCall} options={{ title: 'Emergency Call' }} />
-        <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
-        <Stack.Screen name="AppAppearance" component={AppAppearance} options={{ title: 'App Appearance' }} />
-        <Stack.Screen name="LanguageSettings" component={LanguageSettings} options={{ title: 'Language Settings' }} />
+        <Stack.Screen name="EmergencyCall" component={EmergencyCall} options={{ title: t('navigation.emergency_call') }} />
+        <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: t('navigation.settings') }} />
+        <Stack.Screen name="AppAppearance" component={AppAppearance} options={{ title: t('navigation.app_appearance') }} />
+        <Stack.Screen name="LanguageSettings" component={LanguageSettings} options={{ title: t('navigation.language_settings') }} />
       </Stack.Navigator>
     </SafeAreaView>
   );
