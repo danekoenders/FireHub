@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useTranslation } from 'react-i18next';
 
@@ -30,7 +30,10 @@ const EmergencyCall = () => {
           iconName="local-hospital"
           iconColor="#1E90FF"
         />
-        <TouchableOpacity style={styles.emergencyButton}>
+        <TouchableOpacity
+          style={styles.emergencyButton}
+          onPress={() => Linking.openURL('tel:112')}
+        >
           <View style={styles.circle}>
             <Icon name="phone-in-talk" size={30} color="white" />
           </View>
@@ -49,7 +52,10 @@ const EmergencyCall = () => {
 
 const EmergencyItem = ({ title, description, phoneNumber, iconName, iconColor }) => {
   return (
-    <TouchableOpacity style={styles.emergencyItem}>
+    <TouchableOpacity
+      style={styles.emergencyItem}
+      onPress={() => Linking.openURL(`tel:${phoneNumber}`)}
+    >
       <View style={[styles.circle, { backgroundColor: iconColor }]}>
         <Icon name={iconName} size={30} color="white" />
       </View>
@@ -58,7 +64,10 @@ const EmergencyItem = ({ title, description, phoneNumber, iconName, iconColor })
         <Text style={styles.emergencyItemDescription}>{description}</Text>
         <Text style={styles.emergencyItemPhoneNumber}>{phoneNumber}</Text>
       </View>
-      <TouchableOpacity style={styles.circleRed}>
+      <TouchableOpacity
+        style={styles.circleRed}
+        onPress={() => Linking.openURL(`tel:${phoneNumber}`)}
+      >
         <Icon name="phone" size={30} color="white" />
       </TouchableOpacity>
     </TouchableOpacity>
