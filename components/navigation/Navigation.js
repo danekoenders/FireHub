@@ -64,8 +64,8 @@ const MainNavigator = ({ alerts }) => {
         </Stack.Screen>
         <Stack.Screen name="EmergencyCall" component={EmergencyCall} options={{ title: 'Emergency Call' }} />
         <Stack.Screen name="Settings" component={SettingsScreen} options={{ title: 'Settings' }} />
-        <Stack.Screen name="AppAppearance" component={AppAppearance} options={{ title: 'AppAppearance' }} />
-        <Stack.Screen name="LanguageSettings" component={LanguageSettings} options={{ title: 'LanguageSettings' }} />
+        <Stack.Screen name="AppAppearance" component={AppAppearance} options={{ title: 'App Appearance' }} />
+        <Stack.Screen name="LanguageSettings" component={LanguageSettings} options={{ title: 'Language Settings' }} />
       </Stack.Navigator>
     </SafeAreaView>
   );
