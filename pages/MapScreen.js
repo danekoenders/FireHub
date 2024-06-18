@@ -1,10 +1,9 @@
-import * as React from 'react';
-import { useState, useEffect, useContext, useRef } from 'react';
-import MapView, { Marker, Callout, Polygon } from 'react-native-maps';
-import { Text } from 'react-native';
-import { StyleSheet, View, SafeAreaView, Image } from 'react-native';
+import React, { useState, useEffect, useContext, useRef } from 'react';
+import MapView, { Polygon } from 'react-native-maps';
+import { StyleSheet, View, SafeAreaView } from 'react-native';
 import * as Location from 'expo-location';
 import themeContext from '../theme/themeContext';
+import { useTranslation } from 'react-i18next';
 
 import CustomMarker from '../components/Map/CustomMarker.js';
 
@@ -12,6 +11,7 @@ const MapScreen = ({ alerts, route, navigation }) => {
     const [selectedAlert, setSelectedAlert] = useState(null);
     const theme = useContext(themeContext);
     const mapRef = useRef(null);
+    const { t, i18n } = useTranslation();
 
     useEffect(() => {
         (async () => {
@@ -66,7 +66,14 @@ const MapScreen = ({ alerts, route, navigation }) => {
                     showsUserLocation={true}
                 >
                     {alerts.map((alert, index) => (
-                        <CustomMarker key={index} alert={alert} />
+                        <CustomMarker
+                            key={index}
+                            alert={{
+                                ...alert,
+                                title: alert.title[i18n.language],
+                                details: alert.details[i18n.language],
+                            }}
+                        />
                     ))}
                     <Polygon
                         coordinates={suburbCoordinates}

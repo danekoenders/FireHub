@@ -3,8 +3,14 @@
     {
       "type": "Medisch ongeval",
       "providerType": "Medical",
-      "title": "Medical Assistance Required",
-      "details": "An elderly person has fallen and needs immediate assistance.",
+      "title": {
+        "en": "Medical Assistance Required",
+        "nl": "Medische Hulp Nodig"
+      },
+      "details": {
+        "en": "An elderly person has fallen and needs immediate assistance.",
+        "nl": "Een oudere persoon is gevallen en heeft onmiddellijke hulp nodig."
+      },
       "time": "10 mins ago",
       "latitude": 51.9205,
       "longitude": 4.47907
@@ -12,8 +18,14 @@
     {
       "type": "Verdachte situatie",
       "providerType": "Police",
-      "title": "Report of Theft",
-      "details": "A report of a stolen bicycle near the central market.",
+      "title": {
+        "en": "Report of Theft",
+        "nl": "Melding van Diefstal"
+      },
+      "details": {
+        "en": "A report of a stolen bicycle near the central market.",
+        "nl": "Een melding van een gestolen fiets bij de centrale markt."
+      },
       "time": "15 mins ago",
       "latitude": 51.9193,
       "longitude": 4.4772
@@ -21,8 +33,14 @@
     {
       "type": "Brand",
       "providerType": "Fire",
-      "title": "Fire Alert",
-      "details": "Report of a kitchen fire in an apartment building on Main Street.",
+      "title": {
+        "en": "Fire Alert",
+        "nl": "Brandalarm"
+      },
+      "details": {
+        "en": "Report of a kitchen fire in an apartment building on Main Street.",
+        "nl": "Melding van een keukenbrand in een appartementencomplex aan de Hoofdstraat."
+      },
       "time": "20 mins ago",
       "latitude": 51.9187,
       "longitude": 4.4750
@@ -30,8 +48,14 @@
     {
       "type": "Medisch ongeval",
       "providerType": "Medical",
-      "title": "Heart Attack Reported",
-      "details": "A man is reported to have a heart attack at the local gym.",
+      "title": {
+        "en": "Heart Attack Reported",
+        "nl": "Hartaanval Gemeld"
+      },
+      "details": {
+        "en": "A man is reported to have a heart attack at the local gym.",
+        "nl": "Een man heeft een hartaanval gekregen in de plaatselijke sportschool."
+      },
       "time": "30 mins ago",
       "latitude": 51.9221,
       "longitude": 4.4753
@@ -39,8 +63,14 @@
     {
       "type": "Verdachte situatie",
       "providerType": "Police",
-      "title": "Suspicious Activity",
-      "details": "Report of suspicious activity in the parking lot of 5th Avenue.",
+      "title": {
+        "en": "Suspicious Activity",
+        "nl": "Verdachte Activiteit"
+      },
+      "details": {
+        "en": "Report of suspicious activity in the parking lot of 5th Avenue.",
+        "nl": "Melding van verdachte activiteit op de parkeerplaats van 5th Avenue."
+      },
       "time": "45 mins ago",
       "latitude": 51.9222,
       "longitude": 4.4781
