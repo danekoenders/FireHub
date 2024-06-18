@@ -24,8 +24,8 @@ const TabNavigator = ({ alerts }) => {
     <Tab.Navigator
       initialRouteName="Map"
       screenOptions={({ route }) => ({
-        headerShown: false, // Hides the header for all tab screens
-        tabBarIcon: ({ color, size }) => {
+        headerShown: false,
+        tabBarIcon: ({ color, size, focused }) => {
           let iconName;
           if (route.name === 'Map') {
             iconName = 'map';
@@ -34,12 +34,30 @@ const TabNavigator = ({ alerts }) => {
           } else if (route.name === 'Help') {
             iconName = 'help-circle';
           }
-          return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
+          return (
+            <MaterialCommunityIcons
+              name={iconName}
+              size={focused ? size + 4 : size} // Slightly larger icon when focused
+              color={color}
+            />
+          );
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          marginBottom: 5,
+        },
+        tabBarStyle: {
+          backgroundColor: '#ffffff',
+          borderTopWidth: 1,
+          borderTopColor: '#dddddd',
+          height: 60,
+          paddingBottom: 5,
+          paddingTop: 5,
         },
       })}
       tabBarOptions={{
-        activeTintColor: 'tomato',
-        inactiveTintColor: 'gray',
+        activeTintColor: '#2E8B57', 
+        inactiveTintColor: '#696969', 
       }}
     >
       <Tab.Screen name="Map" options={{ tabBarLabel: t('navigation.map') }}>
@@ -59,7 +77,7 @@ const MainNavigator = ({ alerts }) => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <Stack.Navigator>
-        <Stack.Screen name="Home" options={{ headerShown: false }}>
+        <Stack.Screen name=" " options={{ headerShown: false }}>
           {props => (
             <>
               <TopNav navigation={props.navigation} />

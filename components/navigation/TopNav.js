@@ -3,12 +3,19 @@ import { View, Text, TouchableOpacity, StyleSheet, TextInput } from 'react-nativ
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const TopNav = ({ navigation, tags = [] }) => {
+  const [currentTab, setCurrentTab] = useState('Home'); // Keep track of the current tab
+
+  const handleNavigation = (screen, label) => {
+    setCurrentTab(label);
+    navigation.navigate(screen, { previousScreenLabel: label });
+  };
+
   return (
     <View style={styles.topNav}>
       <View style={styles.menu}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('EmergencyCall')}
+          onPress={() => handleNavigation('EmergencyCall', currentTab)}
         >
           <Icon name="phone-in-talk" size={24} color="red" />
         </TouchableOpacity>
@@ -21,7 +28,7 @@ const TopNav = ({ navigation, tags = [] }) => {
         </View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('Settings')}
+          onPress={() => handleNavigation('Settings', currentTab)}
         >
           <Icon name="settings" size={24} color="#999" />
         </TouchableOpacity>
