@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const TopNav = ({ navigation, tags = [] }) => {
   return (
@@ -9,16 +10,20 @@ const TopNav = ({ navigation, tags = [] }) => {
           style={styles.button}
           onPress={() => navigation.navigate('EmergencyCall')}
         >
-          <Text>Call</Text>
+          <Icon name="phone-in-talk" size={24} color="red" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text>Search</Text>
-        </TouchableOpacity>
+        <View style={styles.searchContainer}>
+          <Icon name="search" size={24} color="#999" />
+          <TextInput
+            style={styles.searchInput}
+            placeholder="Search"
+          />
+        </View>
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate('Settings')}
         >
-          <Text>Settings</Text>
+          <Icon name="settings" size={24} color="#999" />
         </TouchableOpacity>
       </View>
       <View style={styles.tags}>
@@ -33,25 +38,40 @@ const TopNav = ({ navigation, tags = [] }) => {
 const styles = StyleSheet.create({
   topNav: {
     flexDirection: 'column',
-    padding: 10
+    padding: 10,
+    backgroundColor: '#FFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#EEE'
   },
   menu: {
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10
   },
   button: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#DDD',
+    padding: 10
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F0F0F0',
     padding: 10,
     borderRadius: 20,
-    width: 80
+    flex: 1,
+    marginHorizontal: 10
+  },
+  searchInput: {
+    marginLeft: 10,
+    flex: 1,
+    color: '#333'
   },
   tags: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    flexWrap: 'wrap',
-    marginTop: 10
+    flexWrap: 'wrap'
   },
   tag: {
     backgroundColor: '#EDEDED',
