@@ -1,86 +1,49 @@
 {
-    "alerts": [
-      {
-        "type": "Medisch ongeval",
-        "providerType": "Medical",
-        "title": "Medical Assistance Required",
-        "details": "An elderly person has fallen and needs immediate assistance.",
-        "time": "10 mins ago",
-        "latitude": 51.9225,
-        "longitude": 4.47917
-      },
-      {
-        "type": "Verdachte situatie",
-        "providerType": "Police",
-        "title": "Report of Theft",
-        "details": "A report of a stolen bicycle near the central market.",
-        "time": "15 mins ago",
-        "latitude": 51.9223,
-        "longitude": 4.4772
-      },
-      {
-        "type": "Brand",
-        "providerType": "Fire",
-        "title": "Fire Alert",
-        "details": "Report of a kitchen fire in an apartment building on Main Street.",
-        "time": "20 mins ago",
-        "latitude": 51.9227,
-        "longitude": 4.4790
-      },
-      {
-        "type": "Medisch ongeval",
-        "providerType": "Medical",
-        "title": "Heart Attack Reported",
-        "details": "A man is reported to have a heart attack at the local gym.",
-        "time": "30 mins ago",
-        "latitude": 51.9221,
-        "longitude": 4.4783
-      },
-      {
-        "type": "Verdachte situatie",
-        "providerType": "Police",
-        "title": "Suspicious Activity",
-        "details": "Report of suspicious activity in the parking lot of 5th Avenue.",
-        "time": "45 mins ago",
-        "latitude": 51.9232,
-        "longitude": 4.4811
-      },
-      {
-        "type": "Brand",
-        "providerType": "Fire",
-        "title": "Small Brush Fire",
-        "details": "A small brush fire has been reported near the river bank.",
-        "time": "1 hour ago",
-        "latitude": 51.9226,
-        "longitude": 4.4802
-      },
-      {
-        "type": "Medisch ongeval",
-        "providerType": "Medical",
-        "title": "Car Accident",
-        "details": "Multiple injuries reported in a car accident on Highway 31.",
-        "time": "2 hours ago",
-        "latitude": 51.9224,
-        "longitude": 4.4820
-      },
-      {
-        "type": "Verdachte situatie",
-        "providerType": "Police",
-        "title": "Burglary",
-        "details": "A home burglary was reported on Elm Street.",
-        "time": "3 hours ago",
-        "latitude": 51.9231,
-        "longitude": 4.4795
-      },
-      {
-        "type": "Brand",
-        "providerType": "Fire",
-        "title": "Commercial Fire",
-        "details": "A fire has broken out in a commercial building downtown.",
-        "time": "4 hours ago",
-        "latitude": 51.9220,
-        "longitude": 4.4805
-      }
-    ]
-  }
-  
+  "alerts": [
+    {
+      "type": "Medisch ongeval",
+      "providerType": "Medical",
+      "title": "Medical Assistance Required",
+      "details": "An elderly person has fallen and needs immediate assistance.",
+      "time": "10 mins ago",
+      "latitude": 51.9205,
+      "longitude": 4.47907
+    },
+    {
+      "type": "Verdachte situatie",
+      "providerType": "Police",
+      "title": "Report of Theft",
+      "details": "A report of a stolen bicycle near the central market.",
+      "time": "15 mins ago",
+      "latitude": 51.9193,
+      "longitude": 4.4772
+    },
+    {
+      "type": "Brand",
+      "providerType": "Fire",
+      "title": "Fire Alert",
+      "details": "Report of a kitchen fire in an apartment building on Main Street.",
+      "time": "20 mins ago",
+      "latitude": 51.9187,
+      "longitude": 4.4750
+    },
+    {
+      "type": "Medisch ongeval",
+      "providerType": "Medical",
+      "title": "Heart Attack Reported",
+      "details": "A man is reported to have a heart attack at the local gym.",
+      "time": "30 mins ago",
+      "latitude": 51.9221,
+      "longitude": 4.4753
+    },
+    {
+      "type": "Verdachte situatie",
+      "providerType": "Police",
+      "title": "Suspicious Activity",
+      "details": "Report of suspicious activity in the parking lot of 5th Avenue.",
+      "time": "45 mins ago",
+      "latitude": 51.9222,
+      "longitude": 4.4781
+    }
+  ]
+}

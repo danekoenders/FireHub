@@ -1,69 +1,12 @@
 import * as React from 'react';
 import { useState, useEffect, useContext, useRef } from 'react';
-import MapView, { Marker, Polygon } from 'react-native-maps';
+import MapView, { Marker, Callout, Polygon } from 'react-native-maps';
+import { Text } from 'react-native';
 import { StyleSheet, View, SafeAreaView, Image } from 'react-native';
 import * as Location from 'expo-location';
 import themeContext from '../theme/themeContext';
 
-// Icon imports
-import medischIcon from '../assets/icons/medisch.png';
-import brandIcon from '../assets/icons/brand.png';
-import verkeerIcon from '../assets/icons/verkeer.png';
-import stroomIcon from '../assets/icons/stroom.png';
-import mededelingIcon from '../assets/icons/mededeling.png';
-import overlastIcon from '../assets/icons/overlast.png';
-import verdachtIcon from '../assets/icons/verdacht.png';
-import hulpIcon from '../assets/icons/hulp.png';
-
-// Define colors for each type
-const colors = {
-    'Verkeers ongeval': '#D9534F', // Red
-    'Medisch ongeval': '#5CB85C', // Green
-    'Brand': '#D9534F', // Red
-    'Stroomuitval': '#F0AD4E', // Orange
-    'Mededeling': '#5BC0DE', // Light Blue
-    'Overlast': '#5CB85C', // Green
-    'Verdachte situatie': '#F0AD4E', // Orange
-    'Vragen/Hulp': '#5BC0DE' // Light Blue
-};
-
-// Custom Marker Component
-const CustomMarker = ({ alert }) => {
-    const icon = getIcon(alert.type);
-    const backgroundColor = colors[alert.type] || '#FFFFFF';
-
-    return (
-        <Marker coordinate={{ latitude: alert.latitude, longitude: alert.longitude }}>
-            <View style={[styles.markerStyle, { backgroundColor }]}>
-                <Image source={icon} style={styles.iconStyle} resizeMode="contain" />
-            </View>
-        </Marker>
-    );
-};
-
-// Get icon based on type
-const getIcon = (type) => {
-    switch (type) {
-        case 'Medisch ongeval':
-            return medischIcon;
-        case 'Brand':
-            return brandIcon;
-        case 'Verkeers ongeval':
-            return verkeerIcon;
-        case 'Stroomuitval':
-            return stroomIcon;
-        case 'Mededeling':
-            return mededelingIcon;
-        case 'Overlast':
-            return overlastIcon;
-        case 'Verdachte situatie':
-            return verdachtIcon;
-        case 'Vragen/Hulp':
-            return hulpIcon;
-        default:
-            return null; // Handle undefined types
-    }
-};
+import CustomMarker from '../components/Map/CustomMarker.js';
 
 const MapScreen = ({ alerts, route, navigation }) => {
     const [selectedAlert, setSelectedAlert] = useState(null);
