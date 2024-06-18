@@ -1,26 +1,29 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { useTranslation } from 'react-i18next';
 
 const EmergencyCall = () => {
+  const { t } = useTranslation();
+
   return (
     <View style={styles.container}>
       <View style={styles.content}>
         <EmergencyItem 
-          title="Politie" 
-          description="Geen spoed\nBijvoorbeeld: aangifte, diefstal" 
+          title={t('emergency.police')} 
+          description={t('emergency.police_description')} 
           phoneNumber="0900-8844" 
           iconName="security" 
         />
         <EmergencyItem 
-          title="Brandweer" 
-          description="Geen spoed\nBijvoorbeeld: kat in de boom, lek" 
+          title={t('emergency.fire_brigade')} 
+          description={t('emergency.fire_brigade_description')} 
           phoneNumber="0900-0904" 
           iconName="fire-extinguisher" 
         />
         <EmergencyItem 
-          title="Ambulance" 
-          description="Geen spoed\nBijvoorbeeld: niet gevaarlijk letsel" 
+          title={t('emergency.ambulance')} 
+          description={t('emergency.ambulance_description')} 
           phoneNumber="088-6223223" 
           iconName="local-hospital" 
         />
@@ -28,8 +31,8 @@ const EmergencyCall = () => {
           <View style={styles.circle}>
             <Icon name="phone-in-talk" size={24} color="white" />
           </View>
-          <Text style={styles.emergencyButtonText}>Nood</Text>
-          <Text style={styles.emergencyButtonNumber}>112</Text>
+          <Text style={styles.emergencyButtonText}>{t('emergency.emergency_button')}</Text>
+          <Text style={styles.emergencyButtonNumber}>{t('emergency.emergency_number')}</Text>
           <View style={styles.circle}>
             <Icon name="phone-in-talk" size={24} color="white" />
           </View>

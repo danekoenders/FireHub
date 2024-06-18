@@ -1,0 +1,31 @@
+{
+    "welcome": "Welkom",
+    "language": "Taalinstellingen",
+    "change_language": "Verander Taal",
+    "english": "Engels",
+    "dutch": "Nederlands",
+    "settings": {
+      "account": "Account",
+      "account_subtext": "Privacy, Beveiliging, DigiD",
+      "notifications": "Notificaties",
+      "notifications_subtext": "Berichten en notificatie radius aanpassen",
+      "appearance": "Uiterlijk",
+      "appearance_subtext": "Verander het uiterlijk van je app",
+      "contact": "Contact",
+      "contact_subtext": "Help center, E-mail",
+      "language": "Taal",
+      "language_subtext": "Verander de taal van de app",
+      "profile_name": "Pieter Hoogeveen"
+    },
+    "emergency": {
+      "police": "Politie",
+      "police_description": "Geen spoed\nBijvoorbeeld: aangifte, diefstal",
+      "fire_brigade": "Brandweer",
+      "fire_brigade_description": "Geen spoed\nBijvoorbeeld: kat in de boom, lek",
+      "ambulance": "Ambulance",
+      "ambulance_description": "Geen spoed\nBijvoorbeeld: niet gevaarlijk letsel",
+      "emergency_button": "Nood",
+      "emergency_number": "112"
+    }
+  }
+  

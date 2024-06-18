@@ -1,0 +1,31 @@
+{
+    "welcome": "Welcome",
+    "language": "Language Settings",
+    "change_language": "Change Language",
+    "english": "English",
+    "dutch": "Dutch",
+    "settings": {
+      "account": "Account",
+      "account_subtext": "Privacy, Security, DigiD",
+      "notifications": "Notifications",
+      "notifications_subtext": "Adjust messages and notification radius",
+      "appearance": "Appearance",
+      "appearance_subtext": "Change the look of your app",
+      "contact": "Contact",
+      "contact_subtext": "Help center, Email",
+      "language": "Language",
+      "language_subtext": "Change the language of the app",
+      "profile_name": "Pieter Hoogeveen"
+    },
+    "emergency": {
+      "police": "Police",
+      "police_description": "Non-emergency\nFor example: report, theft",
+      "fire_brigade": "Fire Brigade",
+      "fire_brigade_description": "Non-emergency\nFor example: cat in a tree, leak",
+      "ambulance": "Ambulance",
+      "ambulance_description": "Non-emergency\nFor example: non-dangerous injury",
+      "emergency_button": "Emergency",
+      "emergency_number": "112"
+    }
+  }
+  
