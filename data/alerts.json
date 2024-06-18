@@ -1,270 +1,86 @@
 {
     "alerts": [
-        {
-            "title": "Lamborghini Aventador",
-            "description": "The Lamborghini Aventador is a mid-engine sports car produced by Italian automotive manufacturer Lamborghini.",
-            "price": "$500,000",
-            "latitude": 51.9225,
-            "longitude": 4.47917
-        },
-        {
-            "title": "Ferrari 488 GTB",
-            "description": "The Ferrari 488 GTB is a mid-engine sports car produced by Italian automobile manufacturer Ferrari.",
-            "price": "$300,000",
-            "latitude": 51.9223,
-            "longitude": 4.4772
-        },
-        {
-            "title": "Porsche 911 Turbo S",
-            "description": "The Porsche 911 Turbo S is a high-performance sports car produced by German automobile manufacturer Porsche.",
-            "price": "$200,000",
-            "latitude": 51.9227,
-            "longitude": 4.4790
-        },
-        {
-            "title": "McLaren 720S",
-            "description": "The McLaren 720S is a British sports car manufactured by McLaren Automotive.",
-            "price": "$350,000",
-            "latitude": 51.9221,
-            "longitude": 4.4783
-        },
-        {
-            "title": "Bugatti Chiron",
-            "description": "The Bugatti Chiron is a mid-engine sports car developed and manufactured by the French automobile manufacturer Bugatti.",
-            "price": "$3,000,000",
-            "latitude": 51.9232,
-            "longitude": 4.4811
-        },
-        {
-            "title": "Aston Martin DBS Superleggera",
-            "description": "The Aston Martin DBS Superleggera is a grand tourer produced by British luxury car manufacturer Aston Martin.",
-            "price": "$350,000",
-            "latitude": 51.9226,
-            "longitude": 4.4802
-        },
-        {
-            "title": "Mercedes-AMG GT R",
-            "description": "The Mercedes-AMG GT R is a high-performance sports car produced by German automobile manufacturer Mercedes-AMG.",
-            "price": "$180,000",
-            "latitude": 51.9224,
-            "longitude": 4.4820
-        },
-        {
-            "title": "Nissan GT-R Nismo",
-            "description": "The Nissan GT-R Nismo is a sports car produced by Japanese automobile manufacturer Nissan.",
-            "price": "$210,000",
-            "latitude": 51.9231,
-            "longitude": 4.4795
-        },
-        {
-            "title": "Chevrolet Corvette ZR1",
-            "description": "The Chevrolet Corvette ZR1 is a high-performance sports car produced by American automobile manufacturer Chevrolet.",
-            "price": "$130,000",
-            "latitude": 51.9220,
-            "longitude": 4.4805
-        },
-        {
-            "title": "Ford Mustang Shelby GT500",
-            "description": "The Ford Mustang Shelby GT500 is a high-performance variant of the Ford Mustang manufactured by Ford.",
-            "price": "$90,000",
-            "latitude": 51.9228,
-            "longitude": 4.4778
-        },
-        {
-            "title": "Audi R8 V10 Plus",
-            "description": "The Audi R8 V10 Plus is a mid-engine sports car produced by the German automobile manufacturer Audi.",
-            "price": "$180,000",
-            "latitude": 51.9223,
-            "longitude": 4.4799
-        },
-        {
-            "title": "BMW i8",
-            "description": "The BMW i8 is a plug-in hybrid sports car produced by the German automaker BMW.",
-            "price": "$150,000",
-            "latitude": 51.9229,
-            "longitude": 4.4825
-        },
-        {
-            "title": "Jaguar F-Type R",
-            "description": "The Jaguar F-Type R is a high-performance sports car produced by British luxury car manufacturer Jaguar.",
-            "price": "$110,000",
-            "latitude": 51.9234,
-            "longitude": 4.4809
-        },
-        {
-            "title": "Lexus LC 500",
-            "description": "The Lexus LC 500 is a luxury grand tourer manufactured by the Japanese automaker Lexus.",
-            "price": "$100,000",
-            "latitude": 51.9225,
-            "longitude": 4.4788
-        },
-        {
-            "title": "Maserati GranTurismo",
-            "description": "The Maserati GranTurismo is a grand tourer produced by the Italian automobile manufacturer Maserati.",
-            "price": "$160,000",
-            "latitude": 51.9233,
-            "longitude": 4.4787
-        },
-        {
-            "title": "Rolls-Royce Wraith",
-            "description": "The Rolls-Royce Wraith is a British handmade luxury grand tourer manufactured by Rolls-Royce Motor Cars.",
-            "price": "$350,000",
-            "latitude": 51.9222,
-            "longitude": 4.4797
-        },
-        {
-            "title": "Bentley Continental GT",
-            "description": "The Bentley Continental GT is a grand tourer manufactured by British luxury car manufacturer Bentley.",
-            "price": "$220,000",
-            "latitude": 51.9227,
-            "longitude": 4.4814
-        },
-        {
-            "title": "Lamborghini Huracán",
-            "description": "The Lamborghini Huracán is a sports car manufactured by Italian automotive manufacturer Lamborghini.",
-            "price": "$250,000",
-            "latitude": 51.9230,
-            "longitude": 4.4789
-        },
-        {
-            "title": "Ferrari SF90 Stradale",
-            "description": "The Ferrari SF90 Stradale is a plug-in hybrid sports car produced by Italian automobile manufacturer Ferrari.",
-            "price": "$600,000",
-            "latitude": 51.9226,
-            "longitude": 4.4808
-        },
-        {
-            "title": "Porsche Taycan Turbo S",
-            "description": "The Porsche Taycan Turbo S is an all-electric sports car produced by German automobile manufacturer Porsche.",
-            "price": "$200,000",
-            "latitude": 51.9228,
-            "longitude": 4.4786
-        },
-        {
-            "title": "McLaren 570S",
-            "description": "The McLaren 570S is a sports car designed and manufactured by British automobile manufacturer McLaren Automotive.",
-            "price": "$200,000",
-            "latitude": 51.9224,
-            "longitude": 4.4796
-        },
-        {
-            "title": "Bugatti Veyron",
-            "description": "The Bugatti Veyron is a mid-engine sports car designed and developed in Germany by the Volkswagen Group and manufactured in Molsheim, France.",
-            "price": "$2,500,000",
-            "latitude": 51.9221,
-            "longitude": 4.4782
-        },
-        {
-            "title": "Aston Martin Vantage",
-            "description": "The Aston Martin Vantage is a series of hand-built sports cars manufactured by British luxury car manufacturer Aston Martin.",
-            "price": "$140,000",
-            "latitude": 51.9231,
-            "longitude": 4.4812
-        },
-        {
-            "title": "Mercedes-Benz SLS AMG",
-            "description": "The Mercedes-Benz SLS AMG is a front-engine, 2-seater luxury grand tourer automobile developed by Mercedes-Benz AMG.",
-            "price": "$250,000",
-            "latitude": 51.9222,
-            "longitude": 4.4803
-        },
-        {
-            "title": "Nissan 370Z",
-            "description": "The Nissan 370Z is a 2-door sports car manufactured by the Japanese automobile manufacturer Nissan.",
-            "price": "$40,000",
-            "latitude": 51.9229,
-            "longitude": 4.4819
-        },
-        {
-            "title": "Chevrolet Camaro SS",
-            "description": "The Chevrolet Camaro SS is the high-performance variant of the Chevrolet Camaro.",
-            "price": "$45,000",
-            "latitude": 51.9226,
-            "longitude": 4.4794
-        },
-        {
-            "title": "Ford Mustang GT",
-            "description": "The Ford Mustang GT is a variant of the Ford Mustang, a pony car manufactured by Ford.",
-            "price": "$50,000",
-            "latitude": 51.9233,
-            "longitude": 4.4779
-        },
-        {
-            "title": "Audi RS3",
-            "description": "The Audi RS3 is a high-performance compact sedan produced by the German automobile manufacturer Audi.",
-            "price": "$60,000",
-            "latitude": 51.9225,
-            "longitude": 4.4793
-        },
-        {
-            "title": "BMW M2",
-            "description": "The BMW M2 is a high-performance sports car produced by the German automaker BMW.",
-            "price": "$60,000",
-            "latitude": 51.9230,
-            "longitude": 4.4823
-        },
-        {
-            "title": "Jaguar F-PACE SVR",
-            "description": "The Jaguar F-PACE SVR is a high-performance SUV produced by British luxury car manufacturer Jaguar.",
-            "price": "$85,000",
-            "latitude": 51.9227,
-            "longitude": 4.4781
-        },
-        {
-            "title": "Lexus RX",
-            "description": "The Lexus RX is a mid-size luxury crossover SUV manufactured by the Japanese automaker Lexus.",
-            "price": "$60,000",
-            "latitude": 51.9234,
-            "longitude": 4.4807
-        },
-        {
-            "title": "Maserati Levante",
-            "description": "The Maserati Levante is a mid-size luxury crossover SUV produced by Italian luxury car manufacturer Maserati.",
-            "price": "$75,000",
-            "latitude": 51.9220,
-            "longitude": 4.4784
-        },
-        {
-            "title": "Rolls-Royce Cullinan",
-            "description": "The Rolls-Royce Cullinan is a full-sized luxury SUV manufactured by Rolls-Royce Motor Cars.",
-            "price": "$350,000",
-            "latitude": 51.9226,
-            "longitude": 4.4804
-        },
-        {
-            "title": "Bentley Flying Spur",
-            "description": "The Bentley Flying Spur is a luxury saloon produced by British luxury car manufacturer Bentley Motors.",
-            "price": "$250,000",
-            "latitude": 51.9231,
-            "longitude": 4.4790
-        },
-        {
-            "title": "Lamborghini Aventador",
-            "description": "The Lamborghini Aventador is a mid-engine sports car produced by the Italian automotive manufacturer Lamborghini.",
-            "price": "$400,000",
-            "latitude": 51.9223,
-            "longitude": 4.4810
-        },
-        {
-            "title": "Ferrari 488 GTB",
-            "description": "The Ferrari 488 GTB is a mid-engine sports car produced by the Italian automobile manufacturer Ferrari.",
-            "price": "$300,000",
-            "latitude": 51.9227,
-            "longitude": 4.4789
-        },
-        {
-            "title": "Porsche 911 GT3",
-            "description": "The Porsche 911 GT3 is a high-performance version of the Porsche 911 sports car.",
-            "price": "$180,000",
-            "latitude": 51.9224,
-            "longitude": 4.4795
-        },
-        {
-            "title": "McLaren P1",
-            "description": "The McLaren P1 is a limited-production plug-in hybrid sports car produced by British automobile manufacturer McLaren Automotive.",
-            "price": "$1,500,000",
-            "latitude": 51.9222,
-            "longitude": 4.4793
-        }
+      {
+        "type": "Medisch ongeval",
+        "providerType": "Medical",
+        "title": "Medical Assistance Required",
+        "details": "An elderly person has fallen and needs immediate assistance.",
+        "time": "10 mins ago",
+        "latitude": 51.9225,
+        "longitude": 4.47917
+      },
+      {
+        "type": "Verdachte situatie",
+        "providerType": "Police",
+        "title": "Report of Theft",
+        "details": "A report of a stolen bicycle near the central market.",
+        "time": "15 mins ago",
+        "latitude": 51.9223,
+        "longitude": 4.4772
+      },
+      {
+        "type": "Brand",
+        "providerType": "Fire",
+        "title": "Fire Alert",
+        "details": "Report of a kitchen fire in an apartment building on Main Street.",
+        "time": "20 mins ago",
+        "latitude": 51.9227,
+        "longitude": 4.4790
+      },
+      {
+        "type": "Medisch ongeval",
+        "providerType": "Medical",
+        "title": "Heart Attack Reported",
+        "details": "A man is reported to have a heart attack at the local gym.",
+        "time": "30 mins ago",
+        "latitude": 51.9221,
+        "longitude": 4.4783
+      },
+      {
+        "type": "Verdachte situatie",
+        "providerType": "Police",
+        "title": "Suspicious Activity",
+        "details": "Report of suspicious activity in the parking lot of 5th Avenue.",
+        "time": "45 mins ago",
+        "latitude": 51.9232,
+        "longitude": 4.4811
+      },
+      {
+        "type": "Brand",
+        "providerType": "Fire",
+        "title": "Small Brush Fire",
+        "details": "A small brush fire has been reported near the river bank.",
+        "time": "1 hour ago",
+        "latitude": 51.9226,
+        "longitude": 4.4802
+      },
+      {
+        "type": "Medisch ongeval",
+        "providerType": "Medical",
+        "title": "Car Accident",
+        "details": "Multiple injuries reported in a car accident on Highway 31.",
+        "time": "2 hours ago",
+        "latitude": 51.9224,
+        "longitude": 4.4820
+      },
+      {
+        "type": "Verdachte situatie",
+        "providerType": "Police",
+        "title": "Burglary",
+        "details": "A home burglary was reported on Elm Street.",
+        "time": "3 hours ago",
+        "latitude": 51.9231,
+        "longitude": 4.4795
+      },
+      {
+        "type": "Brand",
+        "providerType": "Fire",
+        "title": "Commercial Fire",
+        "details": "A fire has broken out in a commercial building downtown.",
+        "time": "4 hours ago",
+        "latitude": 51.9220,
+        "longitude": 4.4805
+      }
     ]
-}
+  }
+  
