@@ -1,17 +1,23 @@
-import * as React from 'react';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { TouchableOpacity, StyleSheet, View, Text, SafeAreaView, ScrollView, Image } from 'react-native';
 import themeContext from '../theme/themeContext';
+import { useTranslation } from 'react-i18next';
 
 const ListScreen = ({ alerts, navigation }) => {
   const theme = useContext(themeContext);
+  const { t, i18n } = useTranslation();
 
   const handleAlertItemClick = (alert) => {
     navigation.navigate('Map', { selectedAlert: alert });
   };
 
-  // Assuming alerts is an array of objects with type, title, details, and time properties
-  const categorizedAlerts = alerts.reduce((acc, alert) => {
+  const translatedAlerts = alerts.map((alert) => ({
+    ...alert,
+    title: alert.title[i18n.language],
+    details: alert.details[i18n.language],
+  }));
+
+  const categorizedAlerts = translatedAlerts.reduce((acc, alert) => {
     const { type } = alert;
     if (!acc[type]) {
       acc[type] = [];
