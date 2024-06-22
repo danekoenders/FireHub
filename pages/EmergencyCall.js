@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useTranslation } from 'react-i18next';
 
@@ -9,32 +9,40 @@ const EmergencyCall = () => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <EmergencyItem 
-          title={t('emergency.police')} 
-          description={t('emergency.police_description')} 
-          phoneNumber="0900-8844" 
-          iconName="security" 
+        <EmergencyItem
+          title={t('emergency.police')}
+          description={t('emergency.police_description')}
+          phoneNumber="0900-8844"
+          iconName="security"
+          iconColor="#FFA500"
         />
-        <EmergencyItem 
-          title={t('emergency.fire_brigade')} 
-          description={t('emergency.fire_brigade_description')} 
-          phoneNumber="0900-0904" 
-          iconName="fire-extinguisher" 
+        <EmergencyItem
+          title={t('emergency.fire_brigade')}
+          description={t('emergency.fire_brigade_description')}
+          phoneNumber="0900-0904"
+          iconName="fire-extinguisher"
+          iconColor="#FF4500"
         />
-        <EmergencyItem 
-          title={t('emergency.ambulance')} 
-          description={t('emergency.ambulance_description')} 
-          phoneNumber="088-6223223" 
-          iconName="local-hospital" 
+        <EmergencyItem
+          title={t('emergency.ambulance')}
+          description={t('emergency.ambulance_description')}
+          phoneNumber="088-6223223"
+          iconName="local-hospital"
+          iconColor="#1E90FF"
         />
-        <TouchableOpacity style={styles.emergencyButton}>
+        <TouchableOpacity
+          style={styles.emergencyButton}
+          onPress={() => Linking.openURL('tel:112')}
+        >
           <View style={styles.circle}>
-            <Icon name="phone-in-talk" size={24} color="white" />
+            <Icon name="phone-in-talk" size={30} color="white" />
           </View>
-          <Text style={styles.emergencyButtonText}>{t('emergency.emergency_button')}</Text>
-          <Text style={styles.emergencyButtonNumber}>{t('emergency.emergency_number')}</Text>
-          <View style={styles.circle}>
-            <Icon name="phone-in-talk" size={24} color="white" />
+          <View style={styles.emergencyButtonTextContainer}>
+            <Text style={styles.emergencyButtonText}>Spoed</Text>
+            <Text style={styles.emergencyButtonNumber}>112</Text>
+          </View>
+          <View style={styles.circleWhite}>
+            <Icon name="phone-in-talk" size={30} color="red" />
           </View>
         </TouchableOpacity>
       </View>
@@ -42,20 +50,26 @@ const EmergencyCall = () => {
   );
 };
 
-const EmergencyItem = ({ title, description, phoneNumber, iconName }) => {
+const EmergencyItem = ({ title, description, phoneNumber, iconName, iconColor }) => {
   return (
-    <TouchableOpacity style={styles.emergencyItem}>
-      <View style={styles.circle}>
-        <Icon name={iconName} size={24} color="white" />
+    <TouchableOpacity
+      style={styles.emergencyItem}
+      onPress={() => Linking.openURL(`tel:${phoneNumber}`)}
+    >
+      <View style={[styles.circle, { backgroundColor: iconColor }]}>
+        <Icon name={iconName} size={30} color="white" />
       </View>
       <View style={styles.emergencyItemText}>
         <Text style={styles.emergencyItemTitle}>{title}</Text>
         <Text style={styles.emergencyItemDescription}>{description}</Text>
         <Text style={styles.emergencyItemPhoneNumber}>{phoneNumber}</Text>
       </View>
-      <View style={styles.circle}>
-        <Icon name="phone-in-talk" size={24} color="white" />
-      </View>
+      <TouchableOpacity
+        style={styles.circleRed}
+        onPress={() => Linking.openURL(`tel:${phoneNumber}`)}
+      >
+        <Icon name="phone" size={30} color="white" />
+      </TouchableOpacity>
     </TouchableOpacity>
   );
 };
@@ -63,7 +77,7 @@ const EmergencyItem = ({ title, description, phoneNumber, iconName }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f5f5f5',
   },
   content: {
     padding: 20,
@@ -72,24 +86,44 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: 12,
-    height: 150,
-    width: '100%',
-    marginBottom: 10,
+    padding: 20,
+    marginBottom: 20,
     backgroundColor: '#fff',
-    borderRadius: 10,
+    borderRadius: 15,
     shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  circle: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  circleRed: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: '#ff0000',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  circleWhite: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: '#ffffff',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: '#ff0000',
   },
   emergencyItemText: {
     flex: 1,
-    marginLeft: 10,
+    marginLeft: 20,
   },
   emergencyItemTitle: {
     fontSize: 18,
@@ -98,47 +132,38 @@ const styles = StyleSheet.create({
   emergencyItemDescription: {
     fontSize: 14,
     color: '#777',
+    marginTop: 5,
   },
   emergencyItemPhoneNumber: {
     fontSize: 14,
     color: '#000',
+    marginTop: 5,
   },
   emergencyButton: {
-    backgroundColor: 'red',
-    padding: 12,
-    height: 150,
-    width: '100%',
-    borderRadius: 10,
-    marginTop: 20,
+    backgroundColor: '#ff0000',
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: 20,
+    borderRadius: 15,
     shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  emergencyButtonTextContainer: {
+    flex: 1,
+    marginLeft: 20,
   },
   emergencyButtonText: {
-    fontSize: 16,
+    fontSize: 18,
     color: '#fff',
-    marginBottom: 10,
   },
   emergencyButtonNumber: {
-    fontSize: 60,
+    fontSize: 80,
     fontWeight: 'bold',
     color: '#fff',
-  },
-  circle: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: 'red',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
 
